@@ -1,0 +1,125 @@
+@font-face {
+  font-family: 'Matrix';
+  src: url('/fonts/Tiny5-MatrixRegular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Bundera';
+  src: url('/fonts/Bunderan-DEMO.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Polea';
+  src: url('/fonts/Polea-ExtraBold-DEMO.otf') format('opentype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'GatteModern';
+  src: url('/fonts/GatteModern-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  /* Light Theme */
+  --bg-primary-light: rgba(255, 255, 255, 0.95);
+  --bg-secondary-light: rgba(250, 250, 250, 0.8);
+  --text-primary-light: rgba(20, 20, 20, 0.9);
+  --text-secondary-light: rgba(60, 60, 60, 0.7);
+  --accent-light: rgba(0, 0, 0, 0.1);
+  --border-light: rgba(0, 0, 0, 0.08);
+  
+  /* Dark Theme */
+  --bg-primary-dark: #1A1A1A;
+  --bg-secondary-dark: rgba(25, 25, 25, 0.8);
+  --text-primary-dark: rgba(255, 255, 255, 0.95);
+  --text-secondary-dark: rgba(255, 255, 255, 0.7);
+  --accent-dark: rgba(255, 255, 255, 0.1);
+  --border-dark: rgba(255, 255, 255, 0.08);
+  
+  /* Common */
+  --radius: 24px;
+  --radius-small: 16px;
+  --radius-large: 32px;
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  /* Cursor-reactive dot background */
+  --mouse-x: 0;
+  --mouse-y: 0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'GatteModern', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+body.light {
+  background: var(--bg-primary-light);
+  color: var(--text-primary-light);
+}
+
+body.dark {
+  background: var(--bg-primary-dark);
+  color: var(--text-primary-dark);
+  background-image: 
+    radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.15) 1px, transparent 0);
+  background-size: 20px 20px;
+  background-position: calc(50% + var(--mouse-x)) calc(50% + var(--mouse-y));
+  transition: background-position 0.12s ease-out;
+}
+
+#root {
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(128, 128, 128, 0.3);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(128, 128, 128, 0.5);
+}
+
+/* Selection styling */
+::selection {
+  background: rgba(255, 255, 255, 0.2);
+  color: inherit;
+}
+
+body.light ::selection {
+  background: rgba(0, 0, 0, 0.12);
+  color: inherit;
+}

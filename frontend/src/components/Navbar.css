@@ -1,0 +1,143 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 32px 5%;
+  transition: var(--transition);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+body.light .navbar {
+  background: rgba(255, 255, 255, 0.7);
+  border-bottom: 1px solid var(--border-light);
+}
+
+body.dark .navbar {
+  background: rgba(15, 15, 15, 0.7);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.navbar.scrolled {
+  padding: 20px 5%;
+}
+
+.navbar-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 0;
+  align-items: center;
+}
+
+.nav-link {
+  background: none;
+  border: none;
+  font-family: 'GatteModern', 'Inter', sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 10px 20px;
+  transition: color 0.25s ease, background 0.25s ease, transform 0.2s ease, box-shadow 0.25s ease;
+  position: relative;
+  letter-spacing: 0.3px;
+  border-radius: var(--radius-small);
+  overflow: hidden;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 6px;
+  left: 50%;
+  width: 0;
+  height: 1.5px;
+  background: currentColor;
+  border-radius: 2px;
+  transition: width 0.25s ease, left 0.25s ease;
+  opacity: 0.6;
+}
+
+.nav-link:hover::after {
+  width: calc(100% - 24px);
+  left: 12px;
+}
+
+body.light .nav-link {
+  color: var(--text-secondary-light);
+}
+
+body.dark .nav-link {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.nav-link:hover {
+  opacity: 1;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+body.light .nav-link:hover {
+  color: var(--text-primary-light);
+  background: rgba(0, 0, 0, 0.06);
+}
+
+body.dark .nav-link:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.nav-link:hover {
+  transform: translateY(-1px);
+}
+
+.nav-divider {
+  font-size: 14px;
+  opacity: 0.4;
+  user-select: none;
+}
+
+body.light .nav-divider {
+  color: var(--text-secondary-light);
+}
+
+body.dark .nav-divider {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+@media (max-width: 968px) {
+  .navbar-links {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .nav-link {
+    font-size: 14px;
+    padding: 6px 12px;
+  }
+  
+  .nav-divider {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 24px 4%;
+  }
+  
+  .navbar-links {
+    gap: 8px;
+  }
+  
+  .nav-link {
+    font-size: 13px;
+    padding: 6px 10px;
+  }
+}
