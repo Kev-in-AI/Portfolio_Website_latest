@@ -463,6 +463,10 @@ body.dark .passport-page {
     padding: 15px;
   }
 
+  .passport-stamp::after {
+    display: none;
+  }
+
   .passport-stamp:hover,
   .passport-stamp.active {
     transform: translateY(-2px) rotate(-0.5deg);
