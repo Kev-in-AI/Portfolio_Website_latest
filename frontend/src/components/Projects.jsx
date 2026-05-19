@@ -1,9 +1,11 @@
 import { useRef, useEffect, useState } from 'react'
+import { createPortal } from 'react-dom'
 import './Projects.css'
 
 const Projects = () => {
   const projectsRef = useRef(null)
   const [selectedProject, setSelectedProject] = useState(null)
+  const [activeProjectIndex, setActiveProjectIndex] = useState(0)
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -29,6 +31,47 @@ const Projects = () => {
   }, [])
 
   const projects = [
+    {
+      id: 4,
+      title: 'ML Algorithms from Scratch',
+      description: 'Implemented decision trees, ensembles, and kernel SVMs from scratch in Python/Jupyter for UCL coursework, building full model pipelines and achieving 100/100.',
+      fullDescription: {
+        overview: 'Machine Learning Algorithms from Scratch: Decision Trees, Ensembles & Kernel SVMs was an individual UCL programming coursework completed from Jan 2026 to Mar 2026. I implemented core machine learning algorithms from scratch in Python/Jupyter, achieving 100/100.\n\nThe project focused on building and testing two full model pipelines: decision trees and ensembles, plus support vector machines. It strengthened my understanding of machine learning fundamentals, optimization, model evaluation, and performance-aware Python implementation beyond using pre-built ML libraries.',
+        contributions: [
+          'Implemented squared-loss split selection, CART tree construction, and tree evaluation for decision tree learning.',
+          'Developed ensemble methods including random forests, bagging, and boosting.',
+          'Optimized competition code that performed faster than hidden benchmark implementations.',
+          'Implemented primal SVM training, hinge loss optimization, and kernelized SVMs.',
+          'Built linear, polynomial, and RBF kernel functions.',
+          'Implemented dual SVM training and cross-validation for model and parameter selection.',
+          'Tuned the classifier to pass competitive hidden tests with strong error performance.'
+        ]
+      },
+      tags: ['Machine Learning', 'Python', 'Jupyter', 'SVM', 'Decision Trees'],
+      links: [
+        { label: 'GitHub', url: 'https://github.com/Kev-in-AI/CART-Decision-Tree-and-SVM-Classifier-Engine' }
+      ]
+    },
+    {
+      id: 5,
+      title: 'Screen Slate',
+      description: 'A Dockerised full-stack movie intelligence web app for catalogue discovery, viewer sentiment analysis, rating prediction, and authenticated curator lists.',
+      fullDescription: {
+        overview: 'Screen Slate is a Dockerised full-stack movie intelligence web application built from Jan 2026 to Mar 2026 for streaming content strategists. It helps users explore catalogue data, analyse viewer sentiment, predict ratings for recent and upcoming titles, and create authenticated curator lists.\n\nThe coursework brief required a web database application using MovieLens data with catalogue discovery, viewer sentiment analysis, rating prediction, personality analysis, and a curated planner. The final system implemented a normalised PostgreSQL schema, SQL-heavy catalogue and prediction queries, a Dockerised PostgreSQL/Express/React architecture, and an authenticated planner workflow.',
+        contributions: [
+          'Designed a normalised PostgreSQL database covering movie, genre, tag, crew, award, rating, personality, and planner entities.',
+          'Used junction tables to support many-to-many relationships across catalogue and planner data.',
+          'Implemented dynamic catalogue search and filtering by title, genre, language, year, tag, award, cast, director, IMDb score, and user rating.',
+          'Developed SQL-backed reporting dashboards for genre popularity, rating polarisation, low-rater spillover, genre affinity, personality alignment, and predictive ratings.',
+          'Built a similarity-based prediction workflow showing predicted mean rating, uncertainty band, preview panel size, distribution chart, and comparable titles.',
+          'Added a cookie-authenticated curated collection planner with user login, list creation, and movie saving.'
+        ]
+      },
+      tags: ['PostgreSQL', 'Node.js', 'Express', 'React', 'Docker'],
+      links: [
+        { label: 'GitHub', url: 'https://github.com/Kev-in-AI/Project-V2' }
+      ]
+    },
     {
       id: 1,
       title: 'Bush Nest',
@@ -62,6 +105,26 @@ const Projects = () => {
       ]
     },
     {
+      id: 6,
+      title: 'CathayGO',
+      description: 'A React and Vite superapp concept for Cathay Pacific, reimagining Asia Miles as an everyday travel and lifestyle companion with booking, rewards, maps, and gamification.',
+      fullDescription: {
+        overview: 'CathayGO: The Cathay Pacific SuperApp was developed during the Cathay Hackathon 2024 in Nov 2024, where our team advanced to the finals. Built with React and Vite, the application reimagines the Cathay Pacific and Asia Miles ecosystem as an everyday lifestyle companion rather than just a travel rewards programme.\n\nThe platform combined flight booking, Asia Miles management, location-based partner discovery, and reward redemption into one seamless experience. A key highlight was the Asia Milestone gamification system, where users could explore destinations, discover Cathay partners through an interactive map, and unlock collectible rewards through NFC-based interactions.',
+        contributions: [
+          'Built a responsive and modern front-end application using React, Vite, and Tailwind CSS.',
+          'Designed user flows that connected flight booking, Asia Miles tracking, partner discovery, and reward redemption.',
+          'Contributed to the Asia Milestone gamification concept, turning travel engagement into collectible destination-based rewards.',
+          'Helped create an engaging consumer experience that positioned Cathay as a lifestyle companion beyond flights.',
+          'Presented the final concept as part of a finalist team at Cathay Hackathon 2024.'
+        ]
+      },
+      tags: ['React', 'Vite', 'Tailwind CSS', 'Web Development', 'UX'],
+      links: [
+        { label: 'Product One Pager', url: 'https://drive.google.com/file/d/1IfoG07t1P1Tv7LJX5ozJg6EOOJBaBkW7/view?usp=sharing' },
+        { label: 'GitHub', url: 'https://github.com/WhackyBoyg0d/CathayFinal' }
+      ]
+    },
+    {
       id: 3,
       title: 'Hydrosort',
       description: 'A blueprint for an innovative smart waste management system tailored for World Connect, a global corporation committed to sustainability. Developed for the CityU Fintech x ESG Hackathon.',
@@ -88,92 +151,108 @@ const Projects = () => {
   }, [selectedProject])
 
   const closeModal = () => setSelectedProject(null)
+  const activeProject = projects[activeProjectIndex]
 
   return (
     <section id="projects" className="projects" ref={projectsRef}>
       <div className="projects-container">
         <div className="projects-header">
           <span className="section-label">Projects</span>
-          <h2 className="section-title">Featured Work</h2>
         </div>
         
-        <div className="projects-grid">
-          {projects.map((project, index) => (
-            <div 
-              key={project.id} 
-              className={`project-card project-card-${index + 1}`} 
-              style={{ transitionDelay: `${index * 0.1}s` }}
-              onClick={() => setSelectedProject(project)}
-            >
-              <div className="project-number">0{index + 1}</div>
-              <h3 className="project-title">{project.title}</h3>
-              <p className="project-description">{project.description}</p>
-              <div className="project-tags">
-                {project.tags.map((tag, tagIndex) => (
-                  <span key={tagIndex} className="project-tag">{tag}</span>
-                ))}
-              </div>
-              <button className="project-link">
-                Learn More →
-              </button>
+        <div className="project-command-deck">
+          <div className="project-spotlight">
+            <div className="project-spotlight-topline">
+              <span className="project-number">0{activeProjectIndex + 1}</span>
             </div>
-          ))}
+            <h3 className="project-title">{activeProject.title}</h3>
+            <p className="project-description">{activeProject.description}</p>
+            <div className="project-tags">
+              {activeProject.tags.map((tag) => (
+                <span key={tag} className="project-tag">{tag}</span>
+              ))}
+            </div>
+            <button className="project-link" onClick={() => setSelectedProject(activeProject)}>
+              Open Project →
+            </button>
+          </div>
+
+          <div className="project-selector" aria-label="Project selector">
+            {projects.map((project, index) => (
+              <button
+                key={project.id}
+                className={`project-selector-item ${activeProjectIndex === index ? 'active' : ''}`}
+                style={{ transitionDelay: `${index * 0.06}s` }}
+                onMouseEnter={() => setActiveProjectIndex(index)}
+                onFocus={() => setActiveProjectIndex(index)}
+                onClick={() => {
+                  setActiveProjectIndex(index)
+                  setSelectedProject(project)
+                }}
+              >
+                <span className="selector-number">0{index + 1}</span>
+                <span className="selector-copy">
+                  <strong>{project.title}</strong>
+                  <span>{project.tags.slice(0, 2).join(' / ')}</span>
+                </span>
+                <span className="selector-arrow">↗</span>
+              </button>
+            ))}
+          </div>
         </div>
       </div>
 
-      {selectedProject && (
+      {selectedProject && createPortal(
         <div className="project-modal-overlay" onClick={closeModal}>
-          <div className="project-modal-content" onClick={(e) => e.stopPropagation()}>
-            <button className="modal-close-btn" onClick={closeModal}>&times;</button>
-            <h2 className="modal-title">{selectedProject.title}</h2>
-            
-            <div className="modal-scroll-area">
-              <div className="modal-section">
-                <h4 className="modal-section-title">Overview</h4>
-                <p className="modal-text">{selectedProject.fullDescription.overview}</p>
+          <button className="project-modal-close" onClick={closeModal} aria-label="Close project details">&times;</button>
+          <div className="project-modal-content" onClick={(event) => event.stopPropagation()}>
+            <div className="project-modal-heading">
+              <span className="project-modal-kicker">Project Details</span>
+              <h2>{selectedProject.title}</h2>
+              <div className="project-tags">
+                {selectedProject.tags.map((tag) => (
+                  <span key={tag} className="project-tag">{tag}</span>
+                ))}
               </div>
+            </div>
 
-              {selectedProject.fullDescription.contributions && (
-                <div className="modal-section">
-                  <h4 className="modal-section-title">Personal Contributions</h4>
-                  <ul className="modal-list">
-                    {selectedProject.fullDescription.contributions.map((contribution, idx) => (
-                      <li key={idx} className="modal-list-item">{contribution}</li>
-                    ))}
-                  </ul>
-                </div>
-              )}
+            <div className="project-modal-section">
+              <h4 className="project-modal-section-title">Overview</h4>
+              <p className="project-modal-text">{selectedProject.fullDescription.overview}</p>
+            </div>
 
-              {selectedProject.links && selectedProject.links.length > 0 && (
-                <div className="modal-section">
-                  <h4 className="modal-section-title">Links</h4>
-                  <div className="modal-links-grid">
-                    {selectedProject.links.map((link, idx) => (
-                      <a 
-                        key={idx} 
-                        href={link.url} 
-                        target="_blank" 
-                        rel="noopener noreferrer" 
-                        className="modal-link-btn"
-                      >
-                        {link.label}
-                      </a>
-                    ))}
-                  </div>
-                </div>
-              )}
+            {selectedProject.fullDescription.contributions && (
+              <div className="project-modal-section">
+                <h4 className="project-modal-section-title">Personal Contributions</h4>
+                <ul className="project-modal-list">
+                  {selectedProject.fullDescription.contributions.map((contribution, idx) => (
+                    <li key={idx}>{contribution}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
 
-              <div className="modal-section">
-                <h4 className="modal-section-title">Technologies</h4>
-                <div className="project-tags">
-                  {selectedProject.tags.map((tag, tagIndex) => (
-                    <span key={tagIndex} className="project-tag">{tag}</span>
+            {selectedProject.links && selectedProject.links.length > 0 && (
+              <div className="project-modal-footer">
+                <span>Links</span>
+                <div className="modal-links-grid">
+                  {selectedProject.links.map((link) => (
+                    <a
+                      key={link.label}
+                      href={link.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="modal-link-btn"
+                    >
+                      {link.label}
+                    </a>
                   ))}
                 </div>
               </div>
-            </div>
+            )}
           </div>
-        </div>
+        </div>,
+        document.body
       )}
     </section>
   )

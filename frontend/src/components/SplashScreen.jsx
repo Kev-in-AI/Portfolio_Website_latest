@@ -1,6 +1,9 @@
 import { useState, useEffect } from 'react'
 import { useTypingAnimation } from '../hooks/useTypingAnimation'
+import NavRobot from './NavRobot'
 import './SplashScreen.css'
+
+const SPLASH_HELLO_ACTION = ['hello']
 
 const SplashScreen = ({ onComplete }) => {
   const [isVisible, setIsVisible] = useState(true)
@@ -16,7 +19,7 @@ const SplashScreen = ({ onComplete }) => {
       setTimeout(() => {
         onComplete()
       }, 800)
-    }, 3000) // Total duration: ~3 seconds
+    }, 2500) // Keeps the intro crisp while still giving the robot time to say hello.
 
     return () => clearTimeout(timer)
   }, [onComplete])
@@ -30,6 +33,12 @@ const SplashScreen = ({ onComplete }) => {
         </div>
         <h1 className="splash-name-primary">Kevin Manickam</h1>
       </div>
+      <NavRobot
+        className="splash-robot-background"
+        listenForClicks={false}
+        actionNames={SPLASH_HELLO_ACTION}
+        playOnLoad
+      />
     </div>
   )
 }

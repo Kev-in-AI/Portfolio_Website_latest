@@ -71,38 +71,40 @@ const Contact = () => {
   return (
     <section id="contact" className="contact" ref={contactRef}>
       <div className="contact-container">
-        <div className="contact-header">
-          <span className="section-label">Contact</span>
-          <h2 className="section-title">Let's Connect</h2>
-          <p className="contact-subtitle">
-            I'm always open to new opportunities and collaborations.
-          </p>
-        </div>
-        
-        <div className="contact-links-grid">
-          {contactLinks.map((link) => (
-            <a 
-              key={link.id} 
-              href={link.url} 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="contact-link-card"
-            >
-              <div className="contact-link-icon-wrapper">
-                {link.icon}
-              </div>
-              <div className="contact-link-info">
-                <span className="contact-link-label">{link.label}</span>
-                <span className="contact-link-value">{link.value}</span>
-              </div>
-              <div className="contact-link-arrow">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                  <line x1="7" y1="17" x2="17" y2="7" />
-                  <polyline points="7 7 17 7 17 17" />
-                </svg>
-              </div>
-            </a>
-          ))}
+        <div className="contact-panel">
+          <div className="contact-copy">
+            <span className="section-label">Contact</span>
+            <h2 className="section-title">Let's build something interesting.</h2>
+            <p className="contact-subtitle">
+              Always happy to chat about internships, projects, ideas, or anything fun to build.
+            </p>
+          </div>
+
+          <div className="contact-links-grid">
+            {contactLinks.map((link) => (
+              <a 
+                key={link.id} 
+                href={link.url} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="contact-link-card"
+              >
+                <div className="contact-link-icon-wrapper">
+                  {link.icon}
+                </div>
+                <div className="contact-link-info">
+                  <span className="contact-link-label">{link.label}</span>
+                  <span className="contact-link-value">{link.value}</span>
+                </div>
+                <div className="contact-link-arrow">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <line x1="7" y1="17" x2="17" y2="7" />
+                    <polyline points="7 7 17 7 17 17" />
+                  </svg>
+                </div>
+              </a>
+            ))}
+          </div>
         </div>
       </div>
     </section>

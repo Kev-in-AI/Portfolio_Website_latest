@@ -22,19 +22,20 @@
   margin-bottom: 80px;
 }
 
-.section-label {
+.experience .section-label {
   display: inline-block;
   font-family: 'Space Grotesk', sans-serif;
-  font-size: 18px;
-  font-weight: 700;
+  font-size: clamp(24px, 3.5vw, 38px);
+  font-weight: 600;
+  line-height: 1.1;
   letter-spacing: 6px;
   text-transform: uppercase;
   padding-bottom: 12px;
-  margin-bottom: 12px;
+  margin-bottom: 0;
   position: relative;
 }
 
-.section-label::after {
+.experience .section-label::after {
   content: '';
   position: absolute;
   bottom: 0;
@@ -46,13 +47,13 @@
   opacity: 0.3;
 }
 
-body.light .section-label {
+body.light .experience .section-label {
   background: transparent;
   color: var(--text-secondary-light);
   border: none;
 }
 
-body.dark .section-label {
+body.dark .experience .section-label {
   background: transparent;
   color: var(--text-secondary-dark);
   border: none;
@@ -68,40 +69,34 @@ body.dark .section-label {
 
 .experience-timeline {
   position: relative;
-  max-width: 1200px;
-  margin: 60px auto 0;
-  padding: 80px 0;
+  max-width: 980px;
+  margin: 54px auto 0;
+  padding: 8px 0 8px 44px;
   display: flex;
-  justify-content: center;
-  gap: 40px;
+  flex-direction: column;
+  gap: 26px;
 }
 
-/* Horizontal line */
 .experience-timeline::before {
   content: '';
   position: absolute;
-  top: 96px; /* Positioned relative to the dot */
-  left: 10%;
-  right: 10%;
-  height: 2px;
-  background: linear-gradient(to right, transparent, var(--border-dark), transparent);
-  transform: none;
+  top: 16px;
+  bottom: 16px;
+  left: 15px;
+  width: 1px;
+  background: linear-gradient(to bottom, transparent, var(--border-dark), transparent);
 }
 
 body.light .experience-timeline::before {
-  background: linear-gradient(to right, transparent, var(--border-light), transparent);
+  background: linear-gradient(to bottom, transparent, var(--border-light), transparent);
 }
 
 .experience-item {
   position: relative;
-  width: 450px;
-  flex-shrink: 0;
+  width: 100%;
   opacity: 0;
   transform: translateY(30px);
   transition: all 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 .experience.visible .experience-item {
@@ -109,60 +104,33 @@ body.light .experience-timeline::before {
   transform: translateY(0);
 }
 
-.experience-item.left,
-.experience-item.right {
-  left: auto;
-  text-align: left;
-}
-
-.experience-dot {
-  position: relative;
-  margin-bottom: 40px;
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  background: var(--text-primary-dark);
-  z-index: 10;
-  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.05);
-}
-
-.experience-summer-label {
+.experience-node {
   position: absolute;
-  bottom: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  margin-bottom: 16px;
-  white-space: nowrap;
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: 14px;
-  font-weight: 700;
-  letter-spacing: 1px;
+  left: -37px;
+  top: 36px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  z-index: 2;
 }
 
-.experience-item.left .experience-summer-label,
-.experience-item.right .experience-summer-label {
-  left: 50%;
-  right: auto;
+.experience-node span {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: currentColor;
+  box-shadow: 0 0 0 8px rgba(128, 128, 128, 0.08);
 }
 
-body.light .experience-dot {
-  background: var(--text-primary-light);
-  box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.05);
-}
-
-.experience-item.left .experience-dot,
-.experience-item.right .experience-dot {
-  right: auto;
-  left: auto;
-}
-
-.experience-content {
-  position: relative;
-  width: 100%;
+.experience-item.expanded .experience-node span {
+  background: #d4af37;
+  box-shadow: 0 0 0 8px rgba(212, 175, 55, 0.14), 0 0 22px rgba(212, 175, 55, 0.32);
 }
 
 .experience-card-inner {
-  padding: 32px;
+  padding: 28px;
   border-radius: var(--radius);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
@@ -170,6 +138,13 @@ body.light .experience-dot {
   border: 1px solid var(--border-dark);
   background: rgba(255, 255, 255, 0.02);
   width: 100%;
+  color: inherit;
+  cursor: pointer;
+  text-align: left;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 24px;
+  align-items: start;
 }
 
 body.light .experience-card-inner {
@@ -178,9 +153,14 @@ body.light .experience-card-inner {
 }
 
 .experience-card-inner:hover {
-  transform: translateY(-5px);
+  transform: translateX(6px);
   background: rgba(255, 255, 255, 0.05);
   border-color: rgba(255, 255, 255, 0.2);
+}
+
+.experience-card-inner:focus-visible {
+  outline: 2px solid rgba(212, 175, 55, 0.6);
+  outline-offset: 4px;
 }
 
 body.light .experience-card-inner:hover {
@@ -188,34 +168,90 @@ body.light .experience-card-inner:hover {
   border-color: rgba(0, 0, 0, 0.2);
 }
 
+.experience-logo-shell {
+  width: 74px;
+  height: 74px;
+  border-radius: 22px;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.16);
+}
+
+.experience-logo-shell img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 9px;
+}
+
+.experience-info {
+  min-width: 0;
+}
+
+.experience-topline {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
 .experience-period {
-  display: block;
   font-family: 'Space Grotesk', sans-serif;
   font-size: 14px;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 2px;
-  margin-bottom: 12px;
   opacity: 0.5;
+}
+
+.experience-summer-label {
+  font-family: 'GatteModern', 'Inter', sans-serif;
+  font-size: 13px;
+  padding: 7px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(128, 128, 128, 0.16);
+  background: rgba(128, 128, 128, 0.08);
+  opacity: 0.72;
+}
+
+.experience-title-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 8px;
 }
 
 .experience-role {
   font-family: 'Space Grotesk', sans-serif;
-  font-size: 22px;
+  font-size: clamp(22px, 3vw, 30px);
   font-weight: 700;
-  margin-bottom: 8px;
+  line-height: 1.15;
+}
+
+.experience-expand-indicator {
+  font-family: 'GatteModern', 'Inter', sans-serif;
+  font-size: 13px;
+  opacity: 0.58;
+  white-space: nowrap;
+  transition: var(--transition);
+}
+
+.experience-card-inner:hover .experience-expand-indicator {
+  opacity: 0.9;
 }
 
 .experience-company-container {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  gap: 16px;
-  margin-bottom: 8px;
-}
-
-.experience-item.left .experience-company-container,
-.experience-item.right .experience-company-container {
-  justify-content: flex-start;
+  gap: 12px;
+  margin-bottom: 18px;
 }
 
 .experience-company {
@@ -231,17 +267,36 @@ body.light .experience-card-inner:hover {
   gap: 6px;
   font-size: 14px;
   opacity: 0.5;
-  margin-bottom: 24px;
-}
-
-.experience-item.left .experience-location,
-.experience-item.right .experience-location {
-  justify-content: flex-start;
 }
 
 .location-icon {
   width: 14px;
   height: 14px;
+}
+
+.experience-impact {
+  font-family: 'GatteModern', 'Inter', sans-serif;
+  font-size: 16px;
+  line-height: 1.65;
+  max-width: 760px;
+  opacity: 0.76;
+  margin-bottom: 18px;
+}
+
+.experience-tools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+}
+
+.experience-tools span {
+  font-family: 'GatteModern', 'Inter', sans-serif;
+  font-size: 12px;
+  padding: 7px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(128, 128, 128, 0.16);
+  background: rgba(128, 128, 128, 0.07);
+  opacity: 0.78;
 }
 
 .experience-points {
@@ -262,72 +317,12 @@ body.light .experience-card-inner:hover {
 
 .experience-collapsible.expanded {
   grid-template-rows: 1fr;
-  padding-top: 24px;
+  padding-top: 26px;
   visibility: visible;
 }
 
 .experience-collapsible > ul {
   min-height: 0;
-}
-
-.experience-expand-btn {
-  background: rgba(128, 128, 128, 0.1);
-  border: 1px solid rgba(128, 128, 128, 0.2);
-  border-radius: var(--radius-small);
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: 14px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 8px 16px;
-  margin-top: 12px;
-  transition: var(--transition);
-  margin-left: 0;
-  margin-right: auto;
-  color: inherit;
-}
-
-body.light .experience-expand-btn {
-  background: rgba(0, 0, 0, 0.05);
-  border-color: var(--border-light);
-}
-
-body.dark .experience-expand-btn {
-  background: rgba(255, 255, 255, 0.05);
-  border-color: var(--border-dark);
-}
-
-.experience-item.left .experience-expand-btn,
-.experience-item.right .experience-expand-btn {
-  margin-left: 0;
-  margin-right: auto;
-}
-
-.experience-expand-btn:hover {
-  background: rgba(128, 128, 128, 0.2);
-  transform: translateY(-2px);
-}
-
-body.light .experience-expand-btn:hover {
-  background: rgba(0, 0, 0, 0.1);
-}
-
-body.dark .experience-expand-btn:hover {
-  background: rgba(255, 255, 255, 0.1);
-}
-
-.expand-icon {
-  width: 18px;
-  height: 18px;
-  transition: transform 0.4s ease;
-}
-
-.expand-icon.rotated {
-  transform: rotate(180deg);
 }
 
 .experience-point {
@@ -345,19 +340,6 @@ body.dark .experience-expand-btn:hover {
   position: absolute;
   left: 0;
   opacity: 0.5;
-}
-
-.experience-item.left .experience-point,
-.experience-item.right .experience-point {
-  padding-left: 20px;
-  padding-right: 0;
-}
-
-.experience-item.left .experience-point::before,
-.experience-item.right .experience-point::before {
-  left: 0;
-  right: auto;
-  content: '→';
 }
 
 .experience-highlight {
@@ -409,19 +391,11 @@ body.light .experience-item-2 .experience-card-inner:hover {
 
 @media (max-width: 1024px) {
   .experience-timeline {
-    flex-wrap: wrap;
-    padding: 40px 0;
-    justify-content: center;
-  }
-
-  .experience-timeline::before {
-    display: none;
+    max-width: 760px;
   }
 
   .experience-item {
-    width: 100%;
-    max-width: 600px;
-    margin-bottom: 60px;
+    max-width: none;
   }
 }
 
@@ -431,14 +405,27 @@ body.light .experience-item-2 .experience-card-inner:hover {
   }
 
   .experience-item {
-    margin-bottom: 40px;
+    margin-bottom: 0;
   }
 
   .experience-card-inner {
     padding: 24px;
+    grid-template-columns: 1fr;
+    gap: 18px;
   }
 
   .experience-role {
     font-size: 20px;
+  }
+
+  .experience-logo-shell {
+    width: 62px;
+    height: 62px;
+    border-radius: 18px;
+  }
+
+  .experience-title-row {
+    flex-direction: column;
+    gap: 8px;
   }
 }

@@ -5,11 +5,13 @@ import SplashScreen from './components/SplashScreen'
 import Navbar from './components/Navbar'
 import ScrollProgress from './components/ScrollProgress'
 import Hero from './components/Hero'
+import KevinIn5 from './components/KevinIn5'
 import Education from './components/Education'
 import Skills from './components/Skills'
 import Experience from './components/Experience'
 import Projects from './components/Projects'
 import Awards from './components/Awards'
+import Extracurriculars from './components/Extracurriculars'
 import Contact from './components/Contact'
 import './App.css'
 
@@ -30,11 +32,13 @@ function AppContent() {
           <Navbar />
           <main className="main-content">
             <Hero />
+            <KevinIn5 />
             <Education />
             <Experience />
             <Projects />
             <Skills />
             <Awards />
+            <Extracurriculars />
             <Contact />
           </main>
         </>

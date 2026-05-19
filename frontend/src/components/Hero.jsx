@@ -1,9 +1,20 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { useTypingAnimation } from '../hooks/useTypingAnimation'
 import './Hero.css'
 
+const extendedAbout = [
+  "I’m currently studying Computer and Data Engineering at the University of Hong Kong, exploring technology, business, finance, and the way they intersect in the real world.",
+  "Right now, I’m especially interested in finance and insurance, and I’m fascinated by how technology can drive smarter decision-making in these industries. I’m still exploring where I want to specialize, but that journey of figuring things out is something I genuinely enjoy.",
+  "I’ve always loved solving problems, but more importantly, understanding people. For me, engineering has never just been about writing code or building systems. It’s about creating things that make a meaningful difference in people’s lives.",
+  "Over the past few years, I’ve worked across software development, embedded systems, AI projects, student leadership, and tech-focused internships. Along the way, I realized I’m most excited by roles that sit at the intersection of technology, business, and people, where communication and problem-solving matter just as much as technical ability.",
+  "A big part of my growth has come from stepping outside my comfort zone. Leaving home to study abroad, earning scholarships, leading communities, and learning from people with completely different perspectives have all shaped the way I think. I aspire to become a global citizen who understands diverse cultures, adapts quickly, and thinks beyond borders.",
+  "I don’t really believe in settling. Every experience is just another step forward.",
+  "Always happy to connect with people from the industry, learn from different experiences, or simply have a good conversation over coffee."
+]
+
 const Hero = () => {
   const heroRef = useRef(null)
+  const [showMore, setShowMore] = useState(false)
   const { displayedText: typingText } = useTypingAnimation('JOHN KENNEDY', 80, 500)
 
   useEffect(() => {
@@ -38,6 +49,9 @@ const Hero = () => {
             <span className="typing-cursor">|</span>
           </div>
           <h1 className="hero-name-primary">Kevin Manickam</h1>
+          <h4 className="hero-about">
+            Curious about people, technology, and the decisions that shape the world around us. Aspiring global citizen exploring the intersection of tech, finance, and insurance; always looking to learn, grow, and create meaningful impact through problem-solving and human connection.
+          </h4>
           <div className="hero-social">
             <a href="https://github.com/Kev-in-AI" target="_blank" rel="noopener noreferrer" className="social-button github">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
@@ -51,7 +65,7 @@ const Hero = () => {
               </svg>
               <span>LinkedIn</span>
             </a>
-            <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="social-button resume">
+            <a href="https://drive.google.com/file/d/1-BCglHb6CMwI21ZD7KEygA23X-my_IBn/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="social-button resume">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
                 <polyline points="14 2 14 8 20 8"></polyline>
@@ -62,11 +76,28 @@ const Hero = () => {
               <span>Resume</span>
             </a>
           </div>
-          <h4 className="hero-about">
-            Hey there! I'm on a journey to become an engineer, and you'll usually find me diving into code, engines, and all things math-related. Ultimately, I aim to utilize my skills and make a positive impact on the world.
-          </h4>
         </div>
-        <div className="hero-image">
+        <div
+          className={`hero-image ${showMore ? 'about-open' : ''}`}
+          role="button"
+          tabIndex="0"
+          aria-expanded={showMore}
+          aria-label="Show extended about me"
+          onMouseEnter={() => setShowMore(true)}
+          onMouseLeave={() => setShowMore(false)}
+          onFocus={() => setShowMore(true)}
+          onBlur={() => setShowMore(false)}
+          onClick={(event) => {
+            if (event.target.closest('.portrait-about-panel')) return
+            setShowMore(prev => !prev)
+          }}
+          onKeyDown={(event) => {
+            if (event.key === 'Enter' || event.key === ' ') {
+              event.preventDefault()
+              setShowMore(prev => !prev)
+            }
+          }}
+        >
           <img 
             src="/assets/portrait.png" 
             alt="Kevin Manickam" 
@@ -76,12 +107,19 @@ const Hero = () => {
               e.target.nextSibling.style.display = 'flex'
             }}
           />
+          <div className="portrait-hover-cue" aria-hidden="true">
+            <span>Hover to read about me</span>
+          </div>
+          <div className="portrait-about-panel">
+            <span className="portrait-about-kicker">About me</span>
+            <div className="portrait-about-copy">
+              {extendedAbout.map((paragraph) => (
+                <p key={paragraph}>{paragraph}</p>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
-      <a href="#education" className="hero-scroll-cue" aria-label="Scroll to content">
-        <span className="hero-scroll-text">Scroll</span>
-        <span className="hero-scroll-chevron">↓</span>
-      </a>
     </section>
   )
 }

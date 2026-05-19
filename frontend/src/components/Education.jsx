@@ -35,122 +35,129 @@ const Education = () => {
       id: 0,
       type: 'Undergraduate',
       institution: 'City University of Hong Kong',
+      code: 'HKG',
+      years: '2023 - Present',
       logo: '/assets/CityU Logo.png',
       image: '/assets/CityU Building.png',
       details: [
         'Bachelor of Computer and Data Engineering',
         'QS World Ranking: 63',
         'Current CGPA: 3.9/4.3',
-        "Dean's List recognition for five of five semesters.",
-        'Received an Entrance Scholarship valued at HKD 160,000/year for an exceptional academic record.',
-        'Chan Sui Hung Best Student Award 2025, City University of Hong Kong'
+        "Dean's List across five semesters",
+        'Entrance Scholarship: HK$160,000/year',
+        'Chan Sui Hung Best Student Award 2025'
       ]
     },
     {
       id: 1,
       type: 'Exchange Semester',
       institution: 'University College London',
+      code: 'LON',
+      years: '2026',
       logo: '/assets/UCL Logo.png',
       image: '/assets/UCL Building.png',
       details: [
         'Bachelor of Computer and Data Engineering',
         'QS World Ranking: 9',
         'Current CGPA: 3.9/4.3',
-        'Recipient of the highly competitive Lee Shau Kee Exchange Scholarship 2025-26 (HK$48,000)',
-        "Selected as the sole nominee from CityU's College of Engineering for UCL's competitive exchange programme"
+        'Lee Shau Kee Exchange Scholarship: HK$48,000',
+        "Sole College of Engineering nominee for UCL exchange"
       ]
     },
     {
       id: 2,
       type: 'High School',
       institution: "St. Joseph's Boys' High School",
+      code: 'BLR',
+      years: '2011 - 2023',
       logo: '/assets/SJBHS Logo.png',
       image: '/assets/SJBHS Building.png',
       details: [
         'Computer Science Stream',
         'Education World Ranking: 3 in India',
-        '93.4% in Class 12 Board Exams (2023) (Top 1% of students)',
-        '94.6% in Class 10 Board Exams (2021) (Top 1% of students)',
-        'Organising Committee for five national and international festivals'
+        'Class 12 Boards: 93.4% (Top 1%)',
+        'Class 10 Boards: 94.6% (Top 1%)',
+        'Organising committee for five national and international festivals'
       ]
     }
   ]
+
+  const activeEducation = educationData[currentPage]
 
   return (
     <section id="education" className="education" ref={educationRef}>
       <div className="education-container">
         <div className="education-header">
-          <div className="header-top">
-            <span className="section-label">Education</span>
-            <div className="header-nav">
-              {educationData.map((edu, index) => {
-                const isNext = (currentPage + 1) % educationData.length === index && educationData.length > 1;
-                return (
-                  <button
-                    key={edu.id}
-                    className={`header-nav-btn ${currentPage === index ? 'active' : ''} ${isNext ? 'next-prompt' : ''}`}
-                    onClick={() => setCurrentPage(index)}
-                  >
-                    {edu.type}
-                  </button>
-                );
-              })}
-            </div>
-          </div>
-          <p className="education-quote">
-            I pride myself for the quality of education that I have recieved through my life
-          </p>
+          <span className="section-label">Education Passport</span>
         </div>
 
-        <div className="education-slider-wrapper">
-          <div 
-            className="education-slider" 
-            style={{ transform: `translateX(-${currentPage * 100}%)` }}
-          >
-            {educationData.map((edu) => (
-              <div key={edu.id} className="education-page">
-                <div className="education-content">
-                  <div className="education-visual">
-                    <div className="institution-image-container">
-                       <img src={edu.image} alt={edu.institution} className="institution-image" />
-                    </div>
-                  </div>
-                  
-                  <div className="education-card">
-                    <div className="card-glass-effect"></div>
-                    <div className="card-content">
-                      <div className="institution-logo-wrapper">
-                         {/* Fallback to text if logo fails or use a placeholder */}
-                        <img src={edu.logo} alt={`${edu.institution} logo`} className="institution-logo" />
-                      </div>
-                      <h3 className="institution-name">{edu.institution}</h3>
-                      <ul className="education-details-list">
-                        {edu.details.map((detail, i) => {
-                          const isSpecial = detail.includes('Ranking:') || detail.includes('CGPA:') || detail.includes('Board Exams');
-                          if (isSpecial) {
-                            const [label, ...valueParts] = detail.split(':');
-                            const value = valueParts.join(':');
-                            return (
-                              <li key={i} className="education-detail-item">
-                                <span>
-                                  {label}: <span className="highlight-text">{value}</span>
-                                </span>
-                              </li>
-                            );
-                          }
-                          return (
-                            <li key={i} className="education-detail-item">
-                              {detail}
-                            </li>
-                          );
-                        })}
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
+        <div className="education-passport">
+          <div className="passport-stamp-strip" aria-label="Education passport stamps">
+            <span className="passport-strip-kicker">Choose a stamp</span>
+            {educationData.map((edu, index) => (
+              <button
+                key={edu.id}
+                className={`passport-stamp ${currentPage === index ? 'active' : ''}`}
+                data-code={edu.code}
+                onClick={() => setCurrentPage(index)}
+              >
+                <span className="passport-stamp-logo">
+                  <img src={edu.logo} alt={`${edu.institution} logo`} />
+                </span>
+                <span className="passport-stamp-copy">
+                  <span className="passport-stamp-type">{edu.type}</span>
+                  <span className="passport-stamp-name">{edu.institution}</span>
+                </span>
+              </button>
             ))}
           </div>
+
+          <article className="passport-page" key={activeEducation.id}>
+            <div className="passport-page-inner">
+              <img className="passport-background-image" src={activeEducation.image} alt="" aria-hidden="true" />
+
+              <div className="passport-info-panel">
+                <div className="passport-seal-row">
+                  <div className="passport-seal">
+                    <img src={activeEducation.logo} alt={`${activeEducation.institution} logo`} />
+                  </div>
+                  <div className="passport-validity">
+                    Validity
+                    <strong>{activeEducation.years}</strong>
+                  </div>
+                </div>
+
+                <p className="passport-type">{activeEducation.type}</p>
+                <h3 className="passport-institution">{activeEducation.institution}</h3>
+
+                <ul className="passport-details">
+                  {activeEducation.details.map((detail, i) => {
+                    const isSpecial = detail.includes('Ranking:') || detail.includes('CGPA:') || detail.includes('Board Exams')
+                    if (isSpecial) {
+                      const [label, ...valueParts] = detail.split(':')
+                      const value = valueParts.join(':')
+                      return (
+                        <li key={i} className="passport-detail">
+                          {label}: <span className="highlight-text">{value}</span>
+                        </li>
+                      )
+                    }
+                    return (
+                      <li key={i} className="passport-detail">
+                        {detail}
+                      </li>
+                    )
+                  })}
+                </ul>
+
+                <div className="passport-stamp-footer">
+                  <span>Verified</span>
+                  <span>{activeEducation.code}</span>
+                  <span>{activeEducation.type}</span>
+                </div>
+              </div>
+            </div>
+          </article>
         </div>
       </div>
     </section>

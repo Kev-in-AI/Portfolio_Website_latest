@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import NavRobot from './NavRobot'
 import './Navbar.css'
 
 const Navbar = () => {
@@ -22,6 +23,7 @@ const Navbar = () => {
   return (
     <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
       <div className="navbar-container">
+        <NavRobot />
         <div className="navbar-links">
           <button onClick={() => scrollToSection('education')} className="nav-link">
             Education
@@ -41,6 +43,10 @@ const Navbar = () => {
           <span className="nav-divider">|</span>
           <button onClick={() => scrollToSection('awards')} className="nav-link">
             Awards
+          </button>
+          <span className="nav-divider">|</span>
+          <button onClick={() => scrollToSection('extracurriculars')} className="nav-link">
+            Activities
           </button>
           <span className="nav-divider">|</span>
           <button onClick={() => scrollToSection('contact')} className="nav-link">
