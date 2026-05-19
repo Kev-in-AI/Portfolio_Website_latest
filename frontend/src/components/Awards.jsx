@@ -251,10 +251,10 @@ const Awards = () => {
   const [currency, setCurrency] = useState('HKD')
   const [typedAmount, setTypedAmount] = useState('')
   const [openGroups, setOpenGroups] = useState({
-    Scholarships: true,
+    Scholarships: false,
     Academic: false,
     Leadership: false,
-    Hackathons: true,
+    Hackathons: false,
     School: false
   })
   const [selectedAward, setSelectedAward] = useState(null)

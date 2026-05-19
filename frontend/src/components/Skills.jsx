@@ -4,10 +4,10 @@ import './Skills.css'
 const Skills = () => {
   const skillsRef = useRef(null)
   const [openCategories, setOpenCategories] = useState({
-    Languages: true,
+    Languages: false,
     'Frameworks & Libraries': false,
     'Developer Tools': false,
-    'Analytical Skills': true,
+    'Analytical Skills': false,
     'Hardware & Embedded Tools': false,
     'Human Languages': false
   })
