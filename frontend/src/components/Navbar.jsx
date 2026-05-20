@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import NavRobot from './NavRobot'
+import GuguChat from './GuguChat'
 import './Navbar.css'
 
 const Navbar = () => {
@@ -21,40 +22,48 @@ const Navbar = () => {
   }
 
   return (
-    <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
-      <div className="navbar-container">
-        <NavRobot />
-        <div className="navbar-links">
-          <button onClick={() => scrollToSection('education')} className="nav-link">
-            Education
-          </button>
-          <span className="nav-divider">|</span>
-          <button onClick={() => scrollToSection('experience')} className="nav-link">
-            Experience
-          </button>
-          <span className="nav-divider">|</span>
-          <button onClick={() => scrollToSection('projects')} className="nav-link">
-            Projects
-          </button>
-          <span className="nav-divider">|</span>
-          <button onClick={() => scrollToSection('skills')} className="nav-link">
-            Skills
-          </button>
-          <span className="nav-divider">|</span>
-          <button onClick={() => scrollToSection('awards')} className="nav-link">
-            Awards
-          </button>
-          <span className="nav-divider">|</span>
-          <button onClick={() => scrollToSection('extracurriculars')} className="nav-link">
-            Activities
-          </button>
-          <span className="nav-divider">|</span>
-          <button onClick={() => scrollToSection('contact')} className="nav-link">
-            Contact
-          </button>
+    <>
+      <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
+        <div className="navbar-container">
+          <div className="navbar-gugu-cluster">
+            <NavRobot />
+            <GuguChat />
+          </div>
+          <div className="navbar-links">
+            <button onClick={() => scrollToSection('education')} className="nav-link">
+              Education
+            </button>
+            <span className="nav-divider">|</span>
+            <button onClick={() => scrollToSection('experience')} className="nav-link">
+              Experience
+            </button>
+            <span className="nav-divider">|</span>
+            <button onClick={() => scrollToSection('projects')} className="nav-link">
+              Projects
+            </button>
+            <span className="nav-divider">|</span>
+            <button onClick={() => scrollToSection('skills')} className="nav-link">
+              Skills
+            </button>
+            <span className="nav-divider">|</span>
+            <button onClick={() => scrollToSection('awards')} className="nav-link">
+              Awards
+            </button>
+            <span className="nav-divider">|</span>
+            <button onClick={() => scrollToSection('extracurriculars')} className="nav-link">
+              Activities
+            </button>
+            <span className="nav-divider">|</span>
+            <button onClick={() => scrollToSection('contact')} className="nav-link">
+              Contact
+            </button>
+          </div>
         </div>
+      </nav>
+      <div className="mobile-gugu-dock">
+        <GuguChat />
       </div>
-    </nav>
+    </>
   )
 }
 

@@ -4,6 +4,8 @@
   "description": "Futuristic minimal portfolio website",
   "scripts": {
     "dev": "cd frontend && npm run dev",
+    "dev:gugu": "node scripts/dev-local-gugu.cjs",
+    "dev:netlify": "npx netlify-cli dev",
     "build": "cd frontend && npm run build",
     "install:all": "npm install && cd frontend && npm install"
   }

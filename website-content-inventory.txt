@@ -1,0 +1,1032 @@
+KEVIN MANICKAM PORTFOLIO WEBSITE - COMPREHENSIVE CONTENT INVENTORY
+
+This document describes the full content currently present on the portfolio website.
+It covers the visible webpage sections, interactive content, modal details, links, stats, and supporting UI elements.
+
+
+1. OVERALL WEBSITE STRUCTURE
+
+The website is a React + Vite single-page portfolio.
+
+Primary section order:
+1. Splash Screen
+2. Navbar and scroll progress
+3. Hero
+4. Five Frames of Kevin
+5. Education Passport
+6. Experience Timeline
+7. Projects
+8. Skill Pills
+9. Awards Dash
+10. Activities
+11. Contact
+
+The website uses a dark, minimal, glassy, dotted-grid visual language with custom typography, large cinematic headings, rounded cards, animated section reveals, modal overlays, collapsible accordions, and a small animated robot character.
+
+The main navigation links are:
+Education
+Experience
+Projects
+Skills
+Awards
+Activities
+Contact
+
+The navbar includes an animated robot on the left. The robot reacts to major interactions across the website, including navbar clicks, buttons, links, project cards, award cards, activity cards, skills accordions, passport stamps, contact links, and currency buttons.
+
+
+2. SPLASH SCREEN
+
+The splash screen appears before the main website.
+
+Displayed name sequence:
+JOHN KENNEDY
+
+Main splash title:
+Kevin Manickam
+
+Behavior:
+The text "JOHN KENNEDY" types in using a typing animation.
+The splash screen stays briefly, then fades out.
+The animated robot appears on the splash screen and performs the hello action.
+
+Robot behavior on splash:
+The robot uses the action "hello".
+It does not listen for page clicks during the splash screen.
+
+
+3. NAVBAR
+
+The navbar appears after the splash screen.
+
+Navbar links:
+Education
+Experience
+Projects
+Skills
+Awards
+Activities
+Contact
+
+Behavior:
+Clicking a nav item smoothly scrolls to the relevant section.
+The navbar changes styling once the user scrolls past 50px.
+The robot in the navbar reacts to interactions.
+
+Robot details:
+Model path: /assets/robot/source/robot.gltf
+Idle clips considered: iddle, idle, walking
+Navbar reaction clips: attackspin, walking
+Target reaction length: 1.65 seconds
+The robot reacts sequentially between its configured action clips.
+The navbar robot has the title "Kevin's tiny robot buddy".
+
+
+4. HERO SECTION
+
+Section ID:
+hero
+
+Main visible content:
+Secondary typed name:
+JOHN KENNEDY
+
+Primary name:
+Kevin Manickam
+
+Short intro copy:
+Curious about people, technology, and the decisions that shape the world around us. Aspiring global citizen exploring the intersection of tech, finance, and insurance; always looking to learn, grow, and create meaningful impact through problem-solving and human connection.
+
+Hero links:
+Github: https://github.com/Kev-in-AI
+LinkedIn: https://www.linkedin.com/in/jk-kevin/
+Resume: https://drive.google.com/file/d/1-BCglHb6CMwI21ZD7KEygA23X-my_IBn/view?usp=sharing
+
+Hero image:
+Image path: /assets/portrait.png
+Alt text: Kevin Manickam
+
+Portrait hover cue:
+Hover to read about me
+
+Extended About Me panel:
+The extended about me appears when the user hovers, focuses, or clicks the portrait.
+
+Extended About Me heading:
+About me
+
+Extended About Me paragraphs:
+I’m currently studying Computer and Data Engineering at the University of Hong Kong, exploring technology, business, finance, and the way they intersect in the real world.
+
+Right now, I’m especially interested in finance and insurance, and I’m fascinated by how technology can drive smarter decision-making in these industries. I’m still exploring where I want to specialize, but that journey of figuring things out is something I genuinely enjoy.
+
+I’ve always loved solving problems, but more importantly, understanding people. For me, engineering has never just been about writing code or building systems. It’s about creating things that make a meaningful difference in people’s lives.
+
+Over the past few years, I’ve worked across software development, embedded systems, AI projects, student leadership, and tech-focused internships. Along the way, I realized I’m most excited by roles that sit at the intersection of technology, business, and people, where communication and problem-solving matter just as much as technical ability.
+
+A big part of my growth has come from stepping outside my comfort zone. Leaving home to study abroad, earning scholarships, leading communities, and learning from people with completely different perspectives have all shaped the way I think. I aspire to become a global citizen who understands diverse cultures, adapts quickly, and thinks beyond borders.
+
+I don’t really believe in settling. Every experience is just another step forward.
+
+Always happy to connect with people from the industry, learn from different experiences, or simply have a good conversation over coffee.
+
+
+5. FIVE FRAMES OF KEVIN
+
+Section ID:
+kevin-in-5
+
+Section heading:
+Five Frames of Kevin
+
+Section description:
+Five quick frames. No resume voice. Just the human bit.
+
+Interaction:
+This section is a stacked card deck with five cards.
+Users can move between cards using previous and next arrows.
+The next arrow has a yellow glow around the circular button boundary.
+Clicking the active card advances to the next card.
+Hovering or focusing on an inactive card makes it active.
+The left control label shows the current card label.
+For the Finance card, the control label reads "Markets" while the card itself still says "Finance".
+
+Frame 1:
+Eyebrow: I am a
+Headline: People Person
+Footnote: Love to collaborate (and yap)
+Tone: white
+
+Frame 2:
+Eyebrow: I aspire to be a
+Headline: Global Citizen
+Cities: London, Hong Kong, Bangalore
+Tone: blue
+
+Frame 3:
+Eyebrow: Aspire to work where Tech meets
+Headline: Finance
+Connector: or
+Secondary headline: Insurance
+Control label: Markets
+Tone: gold
+
+Frame 4:
+Eyebrow: But don't get me wrong, I love my
+Headline: Tech
+Tone: red
+
+Frame 5:
+Eyebrow: I value my
+Headline: Network
+Footnote: Let's chat?
+Contact link: Contact →
+Tone: white
+
+
+6. EDUCATION PASSPORT
+
+Section ID:
+education
+
+Section heading:
+Education Passport
+
+Design concept:
+The education section is designed as an academic passport. Users choose between institution stamps, and the main passport page updates with the selected institution. It uses logos, school/university building imagery, validity dates, passport-style tags, and stamp-like visual treatment.
+
+Stamp strip label:
+Choose a stamp
+
+Education entry 1:
+Type: Undergraduate
+Institution: City University of Hong Kong
+Code: HKG
+Years / validity: 2023 - Present
+Logo: /assets/CityU Logo.png
+Background image: /assets/CityU Building.png
+Details:
+Bachelor of Computer and Data Engineering
+QS World Ranking: 63
+Current CGPA: 3.9/4.3
+Dean's List across five semesters
+Entrance Scholarship: HK$160,000/year
+Chan Sui Hung Best Student Award 2025
+Footer tags:
+Verified
+HKG
+Undergraduate
+
+Education entry 2:
+Type: Exchange Semester
+Institution: University College London
+Code: LON
+Years / validity: 2026
+Logo: /assets/UCL Logo.png
+Background image: /assets/UCL Building.png
+Details:
+Bachelor of Computer and Data Engineering
+QS World Ranking: 9
+Current CGPA: 3.9/4.3
+Lee Shau Kee Exchange Scholarship: HK$48,000
+Sole College of Engineering nominee for UCL exchange
+Footer tags:
+Verified
+LON
+Exchange Semester
+
+Education entry 3:
+Type: High School
+Institution: St. Joseph's Boys' High School
+Code: BLR
+Years / validity: 2011 - 2023
+Logo: /assets/SJBHS Logo.png
+Background image: /assets/SJBHS Building.png
+Details:
+Computer Science Stream
+Education World Ranking: 3 in India
+Class 12 Boards: 93.4% (Top 1%)
+Class 10 Boards: 94.6% (Top 1%)
+Organising committee for five national and international festivals
+Footer tags:
+Verified
+BLR
+High School
+
+Mobile note:
+The HKG, LON, and BLR watermark text is hidden in the stamp cards on small screens to avoid clashing with institution names.
+
+
+7. EXPERIENCE TIMELINE
+
+Section ID:
+experience
+
+Section heading:
+Experience Timeline
+
+Interaction:
+Each experience card is expandable.
+Cards can be clicked or opened via keyboard using Enter or Space.
+Collapsed cards show role, company, location, period, impact summary, and tools.
+Expanded cards reveal bullet-point responsibilities and achievements.
+
+Experience 1:
+Role: Software Developer Intern
+Company: Expando World Ltd.
+Location: Hong Kong
+Period: Jun 2025 - Aug 2025
+Label: Summer 2025
+Logo: /assets/Expando logo.png
+Impact summary:
+Frontend architecture, deployment workflows, and product polish for a global development team.
+Tools:
+Next.js
+React
+TypeScript
+TailwindCSS
+Supabase
+Docker
+Expanded details:
+Built and optimized cross-platform front-end architecture with Next.js, React, TypeScript, TailwindCSS, improving Time-to-Interactive, reducing code bundle size, and achieving an improvement in mobile responsiveness by 150ms across 5+ device profiles.
+Collaborated on bug fixing, codebase maintenance, and UI enhancements in a global development team, contributing to software stability and improved user experience through Git-based workflows and merge requests.
+Streamlined development and deployment by integrating Supabase, Stripe CLI, and Docker, and reducing environment setup time. Produced documentation that helped with onboarding queries and translations.
+
+Experience 2:
+Role: Junior Programmer Intern
+Company: Radiance Tech International Ltd.
+Location: Hong Kong
+Period: Jun 2024 - Aug 2024
+Label: Summer 2024
+Logo: /assets/Radiance logo.png
+Impact summary:
+Automation and 3D asset pipeline support across internal web and software workflows.
+Tools:
+Blender
+Python
+Node.js
+Three.js
+Bash
+Docker
+Expanded details:
+Processed, validated, and optimized 300+ 3D asset files using Blender, Python, and Node.js scripts, reducing asset load errors by 35%, cutting manual QA time significantly, and improving retrieval speed.
+Enhanced internal development workflows by automating tasks with Bash, NPM scripts, and Docker, improving build stability and lowering repetitive manual steps by 20%. Collaborated through Git, Lark, and Notion, enabling a significantly faster sprint turnaround.
+Acquired hands-on experience in Web Development and JavaScript, worked primarily with the three.js libraries, applying them to support software tasks and build foundational skills in full-stack development.
+
+
+8. PROJECTS
+
+Section ID:
+projects
+
+Section heading:
+Projects
+
+Interaction:
+The project section has a spotlight card and a selector list.
+Hovering or focusing selector items changes the active spotlight project.
+Clicking a selector item opens that project modal.
+Clicking "Open Project →" opens the modal for the active project.
+Project modals show a heading, tags, overview, optional personal contributions, and links.
+
+Project 1 in selector:
+Title: ML Algorithms from Scratch
+Spotlight description:
+Implemented decision trees, ensembles, and kernel SVMs from scratch in Python/Jupyter for UCL coursework, building full model pipelines and achieving 100/100.
+Tags:
+Machine Learning
+Python
+Jupyter
+SVM
+Decision Trees
+Modal overview:
+Machine Learning Algorithms from Scratch: Decision Trees, Ensembles & Kernel SVMs was an individual UCL programming coursework completed from Jan 2026 to Mar 2026. I implemented core machine learning algorithms from scratch in Python/Jupyter, achieving 100/100.
+
+The project focused on building and testing two full model pipelines: decision trees and ensembles, plus support vector machines. It strengthened my understanding of machine learning fundamentals, optimization, model evaluation, and performance-aware Python implementation beyond using pre-built ML libraries.
+Personal contributions:
+Implemented squared-loss split selection, CART tree construction, and tree evaluation for decision tree learning.
+Developed ensemble methods including random forests, bagging, and boosting.
+Optimized competition code that performed faster than hidden benchmark implementations.
+Implemented primal SVM training, hinge loss optimization, and kernelized SVMs.
+Built linear, polynomial, and RBF kernel functions.
+Implemented dual SVM training and cross-validation for model and parameter selection.
+Tuned the classifier to pass competitive hidden tests with strong error performance.
+Links:
+GitHub: https://github.com/Kev-in-AI/CART-Decision-Tree-and-SVM-Classifier-Engine
+
+Project 2 in selector:
+Title: Screen Slate
+Spotlight description:
+A Dockerised full-stack movie intelligence web app for catalogue discovery, viewer sentiment analysis, rating prediction, and authenticated curator lists.
+Tags:
+PostgreSQL
+Node.js
+Express
+React
+Docker
+Modal overview:
+Screen Slate is a Dockerised full-stack movie intelligence web application built from Jan 2026 to Mar 2026 for streaming content strategists. It helps users explore catalogue data, analyse viewer sentiment, predict ratings for recent and upcoming titles, and create authenticated curator lists.
+
+The coursework brief required a web database application using MovieLens data with catalogue discovery, viewer sentiment analysis, rating prediction, personality analysis, and a curated planner. The final system implemented a normalised PostgreSQL schema, SQL-heavy catalogue and prediction queries, a Dockerised PostgreSQL/Express/React architecture, and an authenticated planner workflow.
+Personal contributions:
+Designed a normalised PostgreSQL database covering movie, genre, tag, crew, award, rating, personality, and planner entities.
+Used junction tables to support many-to-many relationships across catalogue and planner data.
+Implemented dynamic catalogue search and filtering by title, genre, language, year, tag, award, cast, director, IMDb score, and user rating.
+Developed SQL-backed reporting dashboards for genre popularity, rating polarisation, low-rater spillover, genre affinity, personality alignment, and predictive ratings.
+Built a similarity-based prediction workflow showing predicted mean rating, uncertainty band, preview panel size, distribution chart, and comparable titles.
+Added a cookie-authenticated curated collection planner with user login, list creation, and movie saving.
+Links:
+GitHub: https://github.com/Kev-in-AI/Project-V2
+
+Project 3 in selector:
+Title: Bush Nest
+Spotlight description:
+This project successfully designed and built a comprehensive smart habitat prototype specifically engineered for a bush baby. The system creates a stable, stimulating, and hygienic environment by integrating multiple automated features.
+Tags:
+Arduino IOT Cloud
+Electronic Design
+C/C++
+AI
+Modal overview:
+This project successfully designed and built a comprehensive smart habitat prototype specifically engineered for a bush baby. The system creates a stable, stimulating, and hygienic environment by integrating multiple automated features. It actively regulates temperature and humidity, controls lighting with an automated curtain and light sensor, and includes a scheduled UV-C sterilisation cycle. To support the bush baby's health and activity, the habitat incorporates a smart feeder, a dynamo-based activity motor, and a camera for live remote viewing. An active noise cancellation system is integrated to minimise disruptive sounds, promoting a calmer atmosphere.
+Personal contributions:
+Designed and prototyped a dynamo-powered running wheel generating up to 30 V from bush baby motion; implemented rectification, supercapacitor storage, and voltage regulation to autonomously drive a UVC sterilization lamp.
+Single-handedly enabled wireless IoT connectivity by sourcing Wi-Fi-enabled Arduino boards and integrating with Arduino IoT Cloud; delivered a real-time mobile dashboard with remote control and live sensor monitoring.
+Led multiple sensor integrations and historical trend visualization into the IoT app, establishing the foundation for automated climate control, light control, and automated feeder in the smart bush baby habitat.
+Built an AI chatbot that helps with troubleshooting any product faults and helps with other questions pertaining to the Bush Baby (like grooming, diet and medical advice).
+Links:
+Report: https://drive.google.com/file/d/1-2YCW7CJUFlD_TO2CvSusXfh2nggz2P6/view?usp=sharing
+Demo: https://drive.google.com/file/d/1LF02DD4LDhgayJVYx-0WMeinI6j8g9YJ/view?usp=drive_link
+
+Project 4 in selector:
+Title: Reach Learning
+Spotlight description:
+Reach Learning is a mobile app developed during the Morgan Stanley Code to Give hackathon to support Project Reach, an initiative aimed at bridging the English proficiency gap for underprivileged K3 students in Hong Kong.
+Tags:
+React
+Database
+AI/ML
+Full Stack
+Modal overview:
+Reach Learning is a mobile app developed during the Morgan Stanley Code to Give hackathon to support Project Reach, an initiative aimed at bridging the English proficiency gap for underprivileged K3 kindergarten students in Hong Kong as they transition to primary school.
+
+The app addresses fragmented access to learning resources and low parental engagement by providing a digital platform where parents can access structured materials (e.g., home learning booklets, videos, and exercises), connect in a safe community forum for sharing advice and doubts, track child progress through analytics dashboards, submit assignments via scanning, and earn tokens through gamification (e.g., badges, leaderboards, streaks) redeemable for incentives like stationery. It includes unique features such as an AI assistant for conversational explanations (supporting Cantonese and multilingual guides), integration with the existing Project Reach learning app for data collection, and parent-teacher chat functionality.
+
+The goal is to empower parents, increase parent-child interaction (building on previous increases of 3,000 hours), reduce paper usage for environmental impact, and help break the cycle of poverty by fostering better educational outcomes, with a focus on data privacy and ease of use.
+Links:
+Pitch Deck: https://drive.google.com/file/d/1U70n5AGacX8tKwZf81J44ZLtV-zZnPkX/view?usp=drive_link
+GitHub: https://github.com/Kev-in-AI/Morgan-Stanley-Code-to-Give
+
+Project 5 in selector:
+Title: CathayGO
+Spotlight description:
+A React and Vite superapp concept for Cathay Pacific, reimagining Asia Miles as an everyday travel and lifestyle companion with booking, rewards, maps, and gamification.
+Tags:
+React
+Vite
+Tailwind CSS
+Web Development
+UX
+Modal overview:
+CathayGO: The Cathay Pacific SuperApp was developed during the Cathay Hackathon 2024 in Nov 2024, where our team advanced to the finals. Built with React and Vite, the application reimagines the Cathay Pacific and Asia Miles ecosystem as an everyday lifestyle companion rather than just a travel rewards programme.
+
+The platform combined flight booking, Asia Miles management, location-based partner discovery, and reward redemption into one seamless experience. A key highlight was the Asia Milestone gamification system, where users could explore destinations, discover Cathay partners through an interactive map, and unlock collectible rewards through NFC-based interactions.
+Personal contributions:
+Built a responsive and modern front-end application using React, Vite, and Tailwind CSS.
+Designed user flows that connected flight booking, Asia Miles tracking, partner discovery, and reward redemption.
+Contributed to the Asia Milestone gamification concept, turning travel engagement into collectible destination-based rewards.
+Helped create an engaging consumer experience that positioned Cathay as a lifestyle companion beyond flights.
+Presented the final concept as part of a finalist team at Cathay Hackathon 2024.
+Links:
+Product One Pager: https://drive.google.com/file/d/1IfoG07t1P1Tv7LJX5ozJg6EOOJBaBkW7/view?usp=sharing
+GitHub: https://github.com/WhackyBoyg0d/CathayFinal
+
+Project 6 in selector:
+Title: Hydrosort
+Spotlight description:
+A blueprint for an innovative smart waste management system tailored for World Connect, a global corporation committed to sustainability. Developed for the CityU Fintech x ESG Hackathon.
+Tags:
+R&D
+Engineering
+App dev
+Modal overview:
+For the CityU Fintech x ESG Hackathon, my team created Hydrosort, a blueprint for an innovative smart waste management system tailored for World Connect, a global corporation committed to sustainability.
+
+With landfills reaching capacity and manual sorting being inefficient, we designed automated dustbins that handle segregation effortlessly. These bins utilize density-based separation for wet/dry waste, electromagnets for metals, sensors for touchless operation, and CNN-based machine learning for over 98% accuracy in material recognition. The accompanying mobile app provides real-time waste statistics, remote control capabilities, community forums for eco-tips, and 24/7 support, all powered by solar energy with modular, easy-to-maintain designs.
+
+We outlined a phased rollout starting with a pilot of 50 units, complete with maintenance plans and training. It's exciting to contribute to ESG goals by enhancing recycling rates, reducing environmental impact, and promoting greener habits in a practical way.
+Links:
+Pitch Deck: https://drive.google.com/file/d/1U70n5AGacX8tKwZf81J44ZLtV-zZnPkX/view?usp=drive_link
+Blueprint: https://drive.google.com/file/d/1-Mqb_Yhrk5dd1kTquLmgtMHF2DAKKkxi/view?usp=drive_link
+
+
+9. SKILL PILLS
+
+Section ID:
+skills
+
+Section heading:
+Skill Pills
+
+Interaction:
+Skills are grouped into collapsible tiles.
+All tiles are collapsed on load and reload.
+Clicking a tile expands or collapses that category.
+
+Category 1:
+Title: Languages
+Accent number: 01
+Lead: Programming foundations across software, data, systems, and low-level coursework.
+Count: 10 skills
+Skills:
+Java
+Python
+C/C++
+JavaScript
+TypeScript
+HTML/CSS
+Bash
+Assembly
+R
+MATLAB
+
+Category 2:
+Title: Frameworks & Libraries
+Accent number: 02
+Lead: Frontend, backend, API, and 3D tooling for full-stack product builds.
+Count: 10 skills
+Skills:
+React
+React Native
+Next.js
+FastAPI
+Flask
+Node.js
+TailwindCSS
+Spring Boot
+Bootstrap
+Three.js
+
+Category 3:
+Title: Developer Tools
+Accent number: 03
+Lead: The everyday stack for shipping, debugging, databases, and hardware-connected projects.
+Count: 9 skills
+Skills:
+Git
+Docker
+Supabase
+PostgreSQL
+MongoDB
+Arduino IoT Cloud
+VS Code
+Visual Studio
+npm/Yarn
+
+Category 4:
+Title: Analytical Skills
+Accent number: 04
+Lead: Data reasoning, modelling, experimentation, and communication for technical decisions.
+Count: 9 skills
+Skills:
+Machine Learning
+Statistical Analysis
+Data Modelling & Visualization
+Business Statistics
+A/B Testing Fundamentals
+Data Cleaning & ETL
+Hypothesis Testing
+Regression Analysis
+Microsoft Office Suite (PowerPoint, Excel, Outlook, Access)
+
+Category 5:
+Title: Hardware & Embedded Tools
+Accent number: 05
+Lead: Embedded prototyping and physical systems work across sensing, power, and automation.
+Count: 8 skills
+Skills:
+Microcontrollers (Arduino, ESP32)
+IoT Prototyping
+Sensor Integration
+Power Electronics
+Circuit Assembly
+HDL (Verilog/VHDL)
+Water Pumps & Mechanical Automation
+Energy Harvesting (Dynamo + Supercapacitors)
+
+Category 6:
+Title: Human Languages
+Accent number: 06
+Lead: Languages I use to connect across cultures, communities, and teams.
+Count: 4 skills
+Skills:
+Tamil (Professional Working)
+Kannada (Professional Working)
+English (Native or Bilingual)
+Hindi (Full Professional)
+
+
+10. AWARDS DASH
+
+Section ID:
+awards
+
+Section heading:
+Awards Dash
+
+Dashboard stats and summary:
+Total scholarship value recognised so far:
+HKD 713,000
+INR 7,440,000
+
+Currency toggle:
+HKD
+INR
+
+Scholarship breakdown:
+Full tuition: HK$640,000
+Exchange: HK$48,000
+Best student: HK$25,000
+
+Stat stack:
+19 recognitions
+5 Dean's Lists
+3 hackathon finals
+
+Featured recognition:
+Title: Chan Sui Hung Best Student Award 2024-25
+Category: Scholarships
+Date: Jun 2025
+Issuer: Student Residence Office, CityU
+Association: City University of Hong Kong
+Value: HK$25,000
+Summary: Awarded for outstanding academic performance, leadership, and active contributions to hall life.
+Details:
+Awarded for outstanding academic performance, leadership, and active contributions to hall life and the residence community.
+Proof label: CSH Best Student Award documents
+Proof links:
+Thank you letter: https://drive.google.com/file/d/1cUWuoAhX2s-YdsVnghTjMPqfJ-aj09i-/view?usp=sharing
+Award receipt email: https://drive.google.com/file/d/1SIaHSpd4gmXJorj98krWwJn4CxL_cuQG/view?usp=sharing
+
+Interaction:
+Award groups are accordion sections.
+All award groups are collapsed on load and reload.
+Clicking a group opens the relevant award cards.
+Clicking an award card opens an award modal.
+Award modals show category, date, title, issuer, association, details, proof label, and proof links when available.
+
+Award group: Scholarships
+Number of awards: 3
+
+Scholarship award 1:
+Title: Lee Shau Kee Exchange Scholarship
+Issuer: Student Development Services, City University of Hong Kong
+Date: Nov 2025
+Category: Scholarships
+Association: City University of Hong Kong
+Value: HK$48,000
+Summary: One of 15 annual recipients of a highly competitive outbound exchange scholarship supporting study at UCL.
+Details:
+Selected for one of CityUHK highest honours for outbound exchange students.
+The scholarship is highly competitive, with only 15 recipients each year.
+Received HK$48,000 to support a semester exchange at University College London.
+Proof label: Financial Sponsorship Letter
+Proof link: https://drive.google.com/file/d/1QMY5OLCOAb6dA1oLK2S1946U6rcWwfki/view?usp=sharing
+
+Scholarship award 2:
+Title: Chan Sui Hung Best Student Award 2024-25
+Issuer: Student Residence Office, CityU
+Date: Jun 2025
+Category: Scholarships
+Association: City University of Hong Kong
+Value: HK$25,000
+Summary: Awarded for outstanding academic performance, leadership, and active contributions to hall life.
+Details:
+Awarded for outstanding academic performance, leadership, and active contributions to hall life and the residence community.
+Proof label: CSH Best Student Award documents
+Proof links:
+Thank you letter: https://drive.google.com/file/d/1cUWuoAhX2s-YdsVnghTjMPqfJ-aj09i-/view?usp=sharing
+Award receipt email: https://drive.google.com/file/d/1SIaHSpd4gmXJorj98krWwJn4CxL_cuQG/view?usp=sharing
+
+Scholarship award 3:
+Title: Full Tuition Scholarship
+Issuer: City University of Hong Kong
+Date: Sep 2023
+Category: Scholarships
+Association: City University of Hong Kong
+Value: HK$145,000 / year
+Summary: Entrance scholarship awarded to students with outstanding academic track records.
+Details:
+Students with an outstanding academic track record are awarded this scholarship worth HK$145,000 per annum.
+Maintained the academic standing required to continue receiving scholarship support.
+Proof label: Financial Record - Full Tuition Scholarship
+Proof link: https://drive.google.com/file/d/1ZpC2xA6h9f6qU3raSWqM1prHlg7KJfAY/view?usp=sharing
+
+Award group: Academic
+Number of awards: 2
+
+Academic award 1:
+Title: Dean's List
+Issuer: Dean, College of Engineering
+Date: Dec 2023 - Dec 2025
+Category: Academic
+Association: City University of Hong Kong
+Summary: Awarded across five semesters for maintaining GPA above 3.7.
+Details:
+Awarded Dean's List for Semesters 1A, 1B, 2A, 2B, and 3A.
+Recognised by the Dean, College of Engineering for consistently achieving GPA above 3.7.
+
+Academic award 2:
+Title: Talent Award
+Issuer: Talent and Education Development Office, CityU
+Date: Sep 2023 and Sep 2024
+Category: Academic
+Association: City University of Hong Kong
+Summary: Recognised twice for exemplary academic performance and CityUHK Tiger Programme completion.
+Details:
+Received the Talent Award in 2023-24 and 2024-25.
+Awarded for exemplary academic performance and meeting all requirements for the CityUHK Tiger Programme.
+Proof label: Talent Award 2023-24 & 2024-25
+Proof link: https://drive.google.com/file/d/1Lp2pOpZ_JeSFYCP8Wy6I5e_i0rDQYrqz/view?usp=sharing
+
+Award group: Leadership
+Number of awards: 2
+
+Leadership award 1:
+Title: Campus Internationalisation Award
+Issuer: City University of Hong Kong
+Date: Apr 2025 and Apr 2026
+Category: Leadership
+Association: CityU Indian Students' Association
+Summary: Recognised twice for leading cultural integration projects through the Indian Students Association.
+Details:
+Received the Campus Internationalisation Award in 2025 and 2026.
+Recognised for contributing to campus-wide cultural integration through the Diwali Celebration and other ISA-led community initiatives.
+The awards reflect work across both Internal Vice President and President roles, building a more connected international campus community.
+Proof label: Campus Internationalisation Award certificates
+Proof links:
+2024-25 certificate: https://drive.google.com/file/d/11uNKHFngOqcj1w20TtlnM1rpytyiG9Xn/view?usp=sharing
+2025-26 certificate: https://drive.google.com/file/d/1HxPNbI_3L5Z9uuMAOJYsZf1RUtqoFL_u/view?usp=sharing
+
+Leadership award 2:
+Title: PALSI Leader
+Issuer: Talent and Education Development Office
+Date: Sep 2025
+Category: Leadership
+Association: City University of Hong Kong
+Summary: Selected to support peer learning for GE1354 Introduction to Electronic Design.
+Details:
+Selected as a PALSI Leader to support peer learning under the university's academic support scheme.
+Facilitated weekly sessions for five freshmen taking GE1354 Introduction to Electronic Design.
+Helped students prepare for classes, review key concepts, develop study strategies, and strengthen problem-solving skills.
+Proof label: Certificate of Appreciation - PALSI
+
+Award group: Hackathons
+Number of awards: 3
+
+Hackathon award 1:
+Title: Morgan Stanley Code to Give 2025 Finalist
+Issuer: Morgan Stanley
+Date: Aug 2025
+Category: Hackathons
+Association: Morgan Stanley
+Summary: Finalist for Reach Learning, an EdTech app supporting underprivileged kindergarten students and families in Hong Kong.
+Details:
+Recognized as a finalist in the Morgan Stanley Code to Give Hackathon 2025.
+Developed Reach Learning, an EdTech mobile application for underprivileged kindergarten students and their families in Hong Kong.
+Worked in a team to build educational resources and AI-assisted learning support.
+
+Hackathon award 2:
+Title: Cathay Hackathon 2024 Finalist
+Issuer: Cathay Pacific
+Date: Nov 2024
+Category: Hackathons
+Association: Cathay Pacific
+Summary: Finalist for CathayGO, a gamified travel and lifestyle platform for the Cathay Pacific and Asia Miles experience.
+Details:
+Recognised as a finalist in Cathay Hackathon 2024 for developing CathayGO.
+Collaborated in a team to conceptualise and build a gamified application featuring flight booking integration, location-based partner discovery, rewards redemption, and the Asia Milestone engagement system.
+Reaching the finals strengthened my passion for technology, innovation, and user-focused product design.
+
+Hackathon award 3:
+Title: CityU x WeBull Fintech ESG Hackathon
+Issuer: City University of Hong Kong
+Date: Jan 2024
+Category: Hackathons
+Association: City University of Hong Kong
+Summary: First hackathon finalist experience, building the foundation for later product and innovation work.
+Details:
+Reached the finalist stage in the CityU Fintech x ESG Hackathon 2024.
+This was my first hackathon, and the experience gained was unmatched.
+
+Award group: School
+Number of awards: 3
+
+School award 1:
+Title: Principal's Award for Contribution to Creative Design
+Issuer: St. Joseph's Boys' High School
+Date: Aug 2023
+Category: School
+Association: St. Joseph's Boys' High School
+Summary: Recognised for creative design contributions to school initiatives.
+Details:
+Awarded by St. Joseph's Boys' High School for contribution to creative design.
+Proof label: Certificate - Principal's Award (Creative Design)
+Proof link: https://drive.google.com/file/d/1HBAHbAYM8FmX8SrAj92BisnYOUe8-zMS/view?usp=sharing
+
+School award 2:
+Title: Principal's Award for Outstanding Contribution to Extra Curricular Activities
+Issuer: St. Joseph's Boys' High School
+Date: Aug 2023
+Category: School
+Association: St. Joseph's Boys' High School
+Summary: Recognised for outstanding contribution to extra-curricular activities.
+Details:
+Awarded by St. Joseph's Boys' High School for outstanding contribution to extra-curricular activities.
+Proof label: Certificate - Principal's Award (Extra-curricular Activities)
+Proof link: https://drive.google.com/file/d/1omAjRDlcNJWBq1sBlamHAo7lBo1VpMI9/view?usp=sharing
+
+School award 3:
+Title: Commendable Delegate - Model United Nations
+Issuer: Amaatra Academy
+Date: Jan 2023
+Category: School
+Association: Amaatra Academy
+Summary: Placed in a crisis portfolio committee.
+Details:
+Placed in a crisis portfolio committee at Amaatra Model United Nations 2023.
+Proof label: AMAATRA MUN - Commendable Delegate
+Proof link: https://drive.google.com/file/d/1T1PzjPgSUmphV36ntwJp-sWjOL50MBXy/view?usp=drive_link
+
+
+11. ACTIVITIES
+
+Section ID:
+extracurriculars
+
+Section heading:
+Activities
+
+Interaction:
+Activities appear as cards.
+Clicking an activity opens a full-screen modal with expanded details.
+The modal can be closed with the close button or by clicking outside the modal.
+
+Activity 1:
+Role: President
+Organisation: CityU Indian Students' Association
+Period: Feb 2025 - Mar 2026
+Duration: 1 yr 2 mos
+Logo: /assets/ISA logo.png
+Affiliation logo: /assets/CityU Logo.png
+Spotlight: Led a community of 250+ students and alumni
+Metrics:
+86% event conversion
+250+ community
+Largest cumulative turnout
+Details:
+Achieved 86% event conversion compared to 48% in the previous year.
+Became the first President to collaborate with an external organisation, Inter Cultural Education.
+Headed a community of more than 250 students and alumni.
+Delivered the largest cumulative event turnout compared to any past committee.
+Led the first cabinet to include a Local Indian member in the administration for Hong Kong local integration.
+Focused on celebrating Indian culture, strengthening collaboration with other organisations, and building a supportive community within the University.
+
+Activity 2:
+Role: Finance Tutor, Hall Management Team
+Organisation: City University of Hong Kong
+Period: Jun 2025 - Jan 2026
+Duration: 8 mos
+Logo: /assets/CityU Logo.png
+Spotlight: Managed hall finances, budgets, reimbursements, and resident support
+Metrics:
+Budget planning
+Financial transparency
+Pastoral care
+Details:
+Managed hall finances, planned budgets, handled reimbursements, and supported financial transparency for hall-related activities.
+Provided pastoral care as part of the Resident Tutor role.
+Supported hall administration and helped foster a welcoming, inclusive environment for residents from around the world.
+
+Activity 3:
+Role: PALSI Leader and Tutor
+Organisation: Talent and Education Development Office, CityUHK
+Period: Sep 2024 - Dec 2024
+Duration: 4 mos
+Logo: /assets/CityU Logo.png
+Spotlight: Tutored GE1354 Introduction to Electronic Design for freshmen
+Metrics:
+5 freshmen
+Study planning
+Course reasoning
+Details:
+Supported students in understanding course material and improving learning and reasoning skills.
+Helped students prepare for classes, formulate study plans, and review course materials.
+Tutored GE1354 Introduction to Electronic Design for a group of five freshmen.
+
+Activity 4:
+Role: Internal Vice President
+Organisation: CityU Indian Students' Association
+Period: Feb 2024 - Feb 2025
+Duration: 1 yr 1 mo
+Logo: /assets/ISA logo.png
+Affiliation logo: /assets/CityU Logo.png
+Spotlight: First freshman elected Vice President in the association history
+Metrics:
+First freshman VP
+Culture building
+Community integration
+Details:
+Helped promote Indian culture and integrate the Indian community with the wider international environment at CityU.
+Became the first freshman to be elected as a Vice President in the organisation history.
+Supported internal coordination, cultural programming, and community-building initiatives.
+
+Activity 5:
+Role: Transcendence, Executive Committee
+Organisation: St. Joseph's Boys' High School
+Period: Apr 2022 - Jun 2022
+Duration: 3 mos
+Logo: /assets/SJBHS Logo.png
+Spotlight: Led digital design and administration for a national science festival
+Metrics:
+1000+ participants
+Media operations
+National festival
+Details:
+Led the digital design team while supporting event administration for a national science festival.
+Helped deliver a festival with over a thousand participants from across the country.
+Curated and hosted a marketing event that blended business and science and became one of the festival highlights.
+
+Activity 6:
+Role: Phenomenon, Executive Committee
+Organisation: St. Joseph's Boys' High School
+Period: Oct 2022 - Nov 2022
+Duration: 2 mos
+Logo: /assets/SJBHS Logo.png
+Spotlight: Built digital assets for Bangalore's premier cultural festival
+Metrics:
+IT & marketing
+Visual design
+National event
+Details:
+Contributed to Bangalore's premier cultural festival as part of the IT and Marketing team.
+Created posters, banners, brochures, and videos for festival promotion.
+Supported a national cultural event featuring global artists and a large student audience.
+
+Activity 7:
+Role: SJBHSMUN, IT and Online Relations
+Organisation: St. Joseph's Boys' High School
+Period: Sep 2021 - Oct 2021
+Duration: 2 mos
+Logo: /assets/SJBHS Logo.png
+Spotlight: Designed media assets and supported backend allotments
+Metrics:
+Social media
+Backend support
+Event systems
+Details:
+Designed posters, brochures, and videos for the social media page.
+Streamlined allotments in the backend for the event operations team.
+
+Activity 8:
+Role: SJBHSMUN, Executive Committee
+Organisation: St. Joseph's Boys' High School
+Period: Aug 2022 - Oct 2022
+Duration: 3 mos
+Logo: /assets/SJBHS Logo.png
+Spotlight: Returned to the IT and Online Relations team in an executive role
+Metrics:
+Executive committee
+Online relations
+Operations
+Details:
+Served on the Executive Committee for SJBHSMUN as part of the IT and Online Relations team.
+Supported event-facing digital operations and online communication workflows.
+
+
+12. CONTACT
+
+Section ID:
+contact
+
+Section heading:
+Contact
+
+Main headline:
+Let's build something interesting.
+
+Subtitle:
+Always happy to chat about internships, projects, ideas, or anything fun to build.
+
+Contact links:
+
+LinkedIn:
+Display value: linkedin.com/in/jk-kevin
+URL: https://www.linkedin.com/in/jk-kevin
+
+Email:
+Display value: kevinmanickam.jk@gmail.com
+URL: mailto:kevinmanickam.jk@gmail.com
+
+Instagram:
+Display value: @j.k.kevin
+URL: https://www.instagram.com/j.k.kevin
+
+
+13. GLOBAL UI AND INTERACTION NOTES
+
+Scroll progress:
+The site includes a scroll progress indicator.
+
+Cursor-reactive dots:
+The app uses a cursor-reactive dotted background effect through a custom hook.
+
+Theme:
+The app is wrapped in a ThemeProvider. The visual design supports light/dark styling variables, though the current portfolio language is heavily dark, cinematic, and glass-based.
+
+Section reveal behavior:
+Most major sections use IntersectionObserver to add a visible class when entering the viewport, enabling scroll-triggered reveal animations.
+
+Modals:
+Project, award, and activity details open in modal overlays.
+When modals are open, body scrolling is disabled.
+Clicking outside the modal or using the close button closes the modal.
+
+Accordion defaults:
+Skills categories start collapsed.
+Awards groups start collapsed.
+
+Primary asset families:
+Portrait image: /assets/portrait.png
+Robot model: /assets/robot/source/robot.gltf
+CityU logo: /assets/CityU Logo.png
+UCL logo: /assets/UCL Logo.png
+SJBHS logo: /assets/SJBHS Logo.png
+ISA logo: /assets/ISA logo.png
+Expando logo: /assets/Expando logo.png
+Radiance logo: /assets/Radiance logo.png
+Webull logo: /assets/webull logo.webp
+Morgan Stanley logo: /assets/morgan stanley logo.jpg
+Cathay logo: /assets/cathay logo.jpg
+Amaatra logo: /assets/Amaatra logo.png
+
+
+14. DEPLOYMENT AND REPOSITORY CONTEXT
+
+Netlify configuration exists in netlify.toml.
+
+Netlify build settings:
+Base: frontend
+Build command: npm run build
+Publish directory: dist
+Node version: 22
+
+SPA redirect:
+All paths redirect to /index.html with status 200.
+
+Assets cache header:
+/assets/* is cached with public, max-age=31536000, immutable.
+
+Root README summary:
+The README describes the site as a React + Vite portfolio website with a dark, minimal, slightly dramatic UI. It lists React, Vite, Three.js, CSS, and Netlify as the stack.
+
