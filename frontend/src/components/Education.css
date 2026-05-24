@@ -138,6 +138,28 @@ body.dark .passport-page {
   transition: var(--transition);
 }
 
+.passport-stamp::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(5, 5, 5, 0.92), rgba(5, 5, 5, 0.78) 48%, rgba(5, 5, 5, 0.92)),
+    radial-gradient(circle at 18% 24%, rgba(212, 175, 55, 0.16), transparent 34%),
+    var(--stamp-flag);
+  background-size: auto, auto, cover;
+  background-position: center;
+  opacity: 0.72;
+  filter: grayscale(0.18) saturate(0.8) contrast(1.08) brightness(0.58);
+  transform: scale(1.05);
+  transition: opacity 0.25s ease, filter 0.25s ease, transform 0.25s ease;
+  z-index: 0;
+}
+
+.passport-stamp > * {
+  position: relative;
+  z-index: 2;
+}
+
 .passport-stamp::after {
   content: attr(data-code);
   position: absolute;
@@ -148,14 +170,22 @@ body.dark .passport-page {
   font-weight: 800;
   letter-spacing: -1px;
   opacity: 0.07;
+  z-index: 1;
 }
 
 .passport-stamp:hover,
 .passport-stamp.active {
   transform: translateX(6px) rotate(-1deg);
   border-color: rgba(212, 175, 55, 0.55);
-  background: rgba(212, 175, 55, 0.08);
+  background: rgba(212, 175, 55, 0.06);
   box-shadow: 0 16px 32px rgba(212, 175, 55, 0.12);
+}
+
+.passport-stamp:hover::before,
+.passport-stamp.active::before {
+  opacity: 0.86;
+  filter: grayscale(0.08) saturate(0.95) contrast(1.12) brightness(0.64);
+  transform: scale(1.02);
 }
 
 .passport-stamp-logo {
@@ -190,6 +220,7 @@ body.dark .passport-page {
   text-transform: uppercase;
   opacity: 0.55;
   margin-bottom: 6px;
+  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.65);
 }
 
 .passport-stamp-name {
@@ -198,6 +229,7 @@ body.dark .passport-page {
   font-size: 16px;
   line-height: 1.25;
   opacity: 0.88;
+  text-shadow: 0 1px 14px rgba(0, 0, 0, 0.82);
 }
 
 .passport-page {
@@ -461,6 +493,17 @@ body.dark .passport-page {
     min-width: 0;
     min-height: 96px;
     padding: 15px;
+  }
+
+  .passport-stamp::before {
+    background:
+      linear-gradient(90deg, rgba(5, 5, 5, 0.94), rgba(5, 5, 5, 0.82) 54%, rgba(5, 5, 5, 0.94)),
+      radial-gradient(circle at 16% 24%, rgba(212, 175, 55, 0.12), transparent 36%),
+      var(--stamp-flag);
+    background-size: auto, auto, cover;
+    background-position: center;
+    opacity: 0.76;
+    filter: grayscale(0.2) saturate(0.76) contrast(1.08) brightness(0.52);
   }
 
   .passport-stamp::after {

@@ -38,6 +38,7 @@ const Education = () => {
       code: 'HKG',
       years: '2023 - Present',
       logo: '/assets/CityU Logo.png',
+      flag: '/assets/Flag_of_Hong_Kong.svg.webp',
       image: '/assets/CityU Building.png',
       details: [
         'Bachelor of Computer and Data Engineering',
@@ -55,6 +56,7 @@ const Education = () => {
       code: 'LON',
       years: '2026',
       logo: '/assets/UCL Logo.png',
+      flag: '/assets/Flag_of_the_United_Kingdom.svg.webp',
       image: '/assets/UCL Building.png',
       details: [
         'Bachelor of Computer and Data Engineering',
@@ -71,6 +73,7 @@ const Education = () => {
       code: 'BLR',
       years: '2011 - 2023',
       logo: '/assets/SJBHS Logo.png',
+      flag: '/assets/Flag_of_India.svg.webp',
       image: '/assets/SJBHS Building.png',
       details: [
         'Computer Science Stream',
@@ -99,6 +102,7 @@ const Education = () => {
                 key={edu.id}
                 className={`passport-stamp ${currentPage === index ? 'active' : ''}`}
                 data-code={edu.code}
+                style={{ '--stamp-flag': `url("${edu.flag}")` }}
                 onClick={() => setCurrentPage(index)}
               >
                 <span className="passport-stamp-logo">
