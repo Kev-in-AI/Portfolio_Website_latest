@@ -137,6 +137,27 @@ const Projects = () => {
         { label: 'Blueprint', url: 'https://drive.google.com/file/d/1-Mqb_Yhrk5dd1kTquLmgtMHF2DAKKkxi/view?usp=drive_link' }
       ]
     },
+    {
+      id: 7,
+      title: 'Portfolio Website',
+      description: 'A cinematic React and Vite portfolio built as a full UI game, with interactive sections, a 3D robot companion, Gugu AI assistant, and Netlify deployment.',
+      fullDescription: {
+        overview: 'This portfolio website is a fully custom React and Vite project designed to turn my profile into an interactive UI experience rather than a static resume page. It combines a dark minimal visual system with cinematic sections for education, experience, projects, skills, awards, activities, contact, and Kevin in 5.\n\nThe site is deployed on Netlify and includes a serverless portfolio assistant named Gugu, backed by a guarded chat endpoint. The goal was simple: make the portfolio feel like a polished product, not just a page.',
+        contributions: [
+          'Designed and implemented a dark, minimal, responsive interface with section-specific visual treatments including the education passport, awards dashboard, project spotlight, and Kevin in 5.',
+          'Built the React component architecture with reusable modal, accordion, spotlight, and interactive card patterns.',
+          'Integrated Three.js for the animated navbar robot and tuned interaction behavior across desktop and mobile.',
+          'Created Gugu, a portfolio-specific AI assistant using a Netlify Function backend with strict guardrails, recruitment-focused answers, and server-side API key handling.',
+          'Prepared the codebase for Netlify deployment with redirects, serverless functions, environment-variable support, and production build checks.',
+          'Iterated heavily on mobile responsiveness, content hierarchy, visual polish, and tiny UI details because the whole thing is absolutely a UI game.'
+        ]
+      },
+      tags: ['React', 'Vite', 'Netlify', 'Three.js', 'AI Assistant'],
+      links: [
+        { label: 'Live Site', url: 'https://kevinmanickamprofile.netlify.app' },
+        { label: 'GitHub', url: 'https://github.com/Kev-in-AI/Portfolio_Website_latest' }
+      ]
+    },
   ]
 
   useEffect(() => {

@@ -99,6 +99,11 @@ const KEVIN_PROFILE = {
       title: 'Hydrosort',
       tags: ['R&D', 'Engineering', 'App dev'],
       summary: 'Created a smart waste-management blueprint for the CityU Fintech x ESG Hackathon using density separation, electromagnets, sensors, CNN recognition, and solar-powered modular bins.'
+    },
+    {
+      title: 'Portfolio Website',
+      tags: ['React', 'Vite', 'Netlify', 'Three.js', 'AI Assistant'],
+      summary: 'Built this cinematic portfolio website as a full UI game with interactive sections, a 3D robot companion, the Gugu AI assistant, Netlify serverless functions, and polished responsive design.'
     }
   ],
   skills: {
@@ -434,7 +439,7 @@ const getDirectPortfolioAnswer = (text) => {
     lowerText.includes('summarise') ||
     lowerText.includes('summarize')
   ) {
-    return `Kevin’s projects cover serious range: ML algorithms from scratch with 100/100 coursework, Screen Slate as a Dockerised movie intelligence app, Bush Nest as an IoT smart habitat, Reach Learning as an EdTech hackathon app, CathayGO as a Cathay Pacific superapp finalist project, and Hydrosort as a smart waste-management concept.${maybeHype(lowerText)}`
+    return `Kevin’s projects cover serious range: ML algorithms from scratch with 100/100 coursework, Screen Slate as a Dockerised movie intelligence app, Bush Nest as an IoT smart habitat, Reach Learning as an EdTech hackathon app, CathayGO as a Cathay Pacific superapp finalist project, Hydrosort as a smart waste-management concept, and this portfolio website as a cinematic React/Vite/Netlify UI project with Gugu AI.${maybeHype(lowerText)}`
   }
 
   if (
